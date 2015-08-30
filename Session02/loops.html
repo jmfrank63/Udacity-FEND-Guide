@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Examples of Javascript Loops</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="FEND Session Two">
+        <meta name="keywords" content="HTML,CSS,JSON,JavaScript">
+        <meta name="author" content="Johannes Maria Frank">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class='jobs'></div>
+        <script>
+             var jobs = [
+                        {
+                            "title": "Automotive Machanic",
+                            "employer": "US Navy",
+                            "date": "2010 - 2011"
+                        },
+                        {
+                            "title": "Automotive Parts Specialist",
+                            "employer": "US Navy",
+                            "date": "2011 - 2012"
+                        },
+                        {
+                            "title": "Work Center Supervisor",
+                            "employer": "US Navy",
+                            "date": "2012 - 2014"
+                        },
+                        {
+                            "title": "Automotive Supply Manager",
+                            "employer": "US Navy",
+                            "date": "2014 - 2016"
+                        }
+                    ];
+
+            for (var i=0; i <jobs.length; i++){
+                console.log(i, ' ', jobs[i]);
+                $('<h3>'+jobs[i].title+'</h3>').appendTo('.jobs');
+                $('<ul><li>' + 'Employer: ' + jobs[i].employer + '</li></ul>').appendTo('.jobs');
+                $('<li>' + 'Date: ' + jobs[i].date + '</li>').appendTo('.jobs ul:last');
+            }
+
+            $.each(jobs, function(index, job) {
+                console.log(index, ' ', job);
+                $('<h3>'+job.title+'</h3>').appendTo('.jobs');
+                $('<ul><li>' + 'Employer: ' + job.employer + '</li></ul>').appendTo('.jobs');
+                $('<li>' + 'Date: ' + job.date + '</li>').appendTo('.jobs ul:last');
+            });
+
+            console.log('length: ',jobs.length);
+        </script>
+
+    </body>
+</html>
